@@ -11,6 +11,8 @@ struct ContentView: View {
     
     @State var showRedView: Bool = false
     @State var showBlueView: Bool = false
+    @State var showIntentView: Bool = false
+    @State var intentViewText: String? = nil
     
     var body: some View {
         
@@ -28,6 +30,14 @@ struct ContentView: View {
                 Label("Show a BlueView", systemImage: "eye.circle.fill")
             })
             .foregroundColor(.blue)
+            
+            Button(action: {
+                intentViewText = nil
+                showIntentView.toggle()
+            }, label: {
+                Label("Show a IntentView", systemImage: "eye.circle.fill")
+            })
+            .foregroundColor(.primary)
         }
         .sheet(isPresented: $showRedView, content: {
             RedView()
@@ -35,11 +45,23 @@ struct ContentView: View {
         .sheet(isPresented: $showBlueView, content: {
             BlueView()
         })
+        .sheet(isPresented: $showIntentView, content: {
+            IntentView(text: intentViewText)
+        })
         .onContinueUserActivity(UserActivityShortcutsManager.Shortcut.redview.type, perform: { userActivity in
             showRedView.toggle()
         })
         .onContinueUserActivity(UserActivityShortcutsManager.Shortcut.blueview.type, perform: { userActivity in
             showBlueView.toggle()
+        })
+        .onContinueUserActivity("ShowIntentViewIntent", perform: { userActivity in
+            
+            if let intent = userActivity.interaction?.intent
+                as? ShowIntentViewIntent {
+                intentViewText = intent.text
+            }
+            
+            showIntentView.toggle()
         })
     }
 }

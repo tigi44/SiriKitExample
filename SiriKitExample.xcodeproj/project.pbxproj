@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EBDD3162696824800023F5D /* IntentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBDD3152696824800023F5D /* IntentView.swift */; };
+		0EBDD32D2696856800023F5D /* ShortcutIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0EBDD32B2696856400023F5D /* ShortcutIntents.intentdefinition */; };
 		0EC70D4A26959BD4004B9BEE /* SiriKitExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC70D4926959BD4004B9BEE /* SiriKitExampleApp.swift */; };
 		0EC70D4C26959BD4004B9BEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC70D4B26959BD4004B9BEE /* ContentView.swift */; };
 		0EC70D4E26959BD5004B9BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC70D4D26959BD5004B9BEE /* Assets.xcassets */; };
@@ -17,7 +19,23 @@
 		0EC70D622695A583004B9BEE /* SiriButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC70D612695A583004B9BEE /* SiriButton.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0EBDD3292696853200023F5D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0EBDD3152696824800023F5D /* IntentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentView.swift; sourceTree = "<group>"; };
+		0EBDD31D2696853200023F5D /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		0EBDD32B2696856400023F5D /* ShortcutIntents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ShortcutIntents.intentdefinition; sourceTree = "<group>"; };
 		0EC70D4626959BD4004B9BEE /* SiriKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiriKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC70D4926959BD4004B9BEE /* SiriKitExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriKitExampleApp.swift; sourceTree = "<group>"; };
 		0EC70D4B26959BD4004B9BEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,12 +59,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EBDD31C2696853200023F5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0EBDD31D2696853200023F5D /* Intents.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0EBDD3322696895500023F5D /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				0EBDD32B2696856400023F5D /* ShortcutIntents.intentdefinition */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
 		0EC70D3D26959BD4004B9BEE = {
 			isa = PBXGroup;
 			children = (
+				0EBDD3322696895500023F5D /* Intents */,
 				0EC70D602695A573004B9BEE /* SiriButton */,
 				0EC70D5E2695A51F004B9BEE /* UserActivityShortcut */,
 				0EC70D4826959BD4004B9BEE /* SiriKitExample */,
+				0EBDD31C2696853200023F5D /* Frameworks */,
 				0EC70D4726959BD4004B9BEE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +102,7 @@
 				0EC70D4B26959BD4004B9BEE /* ContentView.swift */,
 				0EC70D5A2695A1C8004B9BEE /* RedView.swift */,
 				0EC70D5C2695A1D1004B9BEE /* BlueView.swift */,
+				0EBDD3152696824800023F5D /* IntentView.swift */,
 				0EC70D4D26959BD5004B9BEE /* Assets.xcassets */,
 				0EC70D5226959BD5004B9BEE /* Info.plist */,
 				0EC70D4F26959BD5004B9BEE /* Preview Content */,
@@ -107,6 +144,7 @@
 				0EC70D4226959BD4004B9BEE /* Sources */,
 				0EC70D4326959BD4004B9BEE /* Frameworks */,
 				0EC70D4426959BD4004B9BEE /* Resources */,
+				0EBDD3292696853200023F5D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -166,7 +204,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EBDD3162696824800023F5D /* IntentView.swift in Sources */,
 				0EC70D622695A583004B9BEE /* SiriButton.swift in Sources */,
+				0EBDD32D2696856800023F5D /* ShortcutIntents.intentdefinition in Sources */,
 				0EC70D5926959D22004B9BEE /* UserActivityShortcutsManager.swift in Sources */,
 				0EC70D4C26959BD4004B9BEE /* ContentView.swift in Sources */,
 				0EC70D5B2695A1C8004B9BEE /* RedView.swift in Sources */,
@@ -297,6 +337,7 @@
 		0EC70D5626959BD5004B9BEE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -319,6 +360,7 @@
 		0EC70D5726959BD5004B9BEE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;

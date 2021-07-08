@@ -9,7 +9,7 @@ import SwiftUI
 import IntentsUI
 
 struct SiriButton: UIViewControllerRepresentable {
-    public let shortcut: INShortcut
+    public let shortcut: INShortcut?
     
     func makeUIViewController(context: Context) -> SiriUIViewController {
         return SiriUIViewController(shortcut: shortcut)
@@ -20,9 +20,9 @@ struct SiriButton: UIViewControllerRepresentable {
 }
 
 class SiriUIViewController: UIViewController {
-    let shortcut: INShortcut
+    let shortcut: INShortcut?
     
-    init(shortcut: INShortcut) {
+    init(shortcut: INShortcut?) {
         self.shortcut = shortcut
         super.init(nibName: nil, bundle: nil)
     }
