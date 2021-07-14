@@ -1,5 +1,7 @@
 # SiriKitExample
 
+[![Swift](https://github.com/tigi44/SiriKitExample/actions/workflows/swift.yml/badge.svg?branch=main)](https://github.com/tigi44/SiriKitExample/actions/workflows/swift.yml)
+
 ## NSUserActivity
 ![blueview](./blueview.png)
 ![blueviewsiri](./blueviewsiri.png)
