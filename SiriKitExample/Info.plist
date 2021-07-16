@@ -22,7 +22,7 @@
 	<true/>
 	<key>NSUserActivityTypes</key>
 	<array>
-		<string>IntentIntent</string>
+		<string>ReverseTextIntent</string>
 		<string>ShowIntentViewIntent</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>

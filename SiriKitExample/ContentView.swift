@@ -46,7 +46,7 @@ struct ContentView: View {
             BlueView()
         })
         .sheet(isPresented: $showIntentView, content: {
-            IntentView(text: intentViewText)
+            IntentView(text: $intentViewText)
         })
         .onContinueUserActivity(UserActivityShortcutsManager.Shortcut.redview.type, perform: { userActivity in
             showRedView.toggle()
@@ -58,6 +58,15 @@ struct ContentView: View {
             
             if let intent = userActivity.interaction?.intent
                 as? ShowIntentViewIntent {
+                intentViewText = intent.text
+            }
+            
+            showIntentView.toggle()
+        })
+        .onContinueUserActivity("ReverseTextIntent", perform: { userActivity in
+            
+            if let intent = userActivity.interaction?.intent
+                as? ReverseTextIntent {
                 intentViewText = intent.text
             }
             

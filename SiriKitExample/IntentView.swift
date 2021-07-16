@@ -10,7 +10,7 @@ import Intents
 
 struct IntentView: View {
     
-    var text: String? = nil
+    @Binding var text: String?
     
     var body: some View {
         
@@ -34,6 +34,6 @@ struct IntentView: View {
 
 struct IntentView_Previews: PreviewProvider {
     static var previews: some View {
-        IntentView(text: "default")
+        IntentView(text: .constant("default"))
     }
 }
