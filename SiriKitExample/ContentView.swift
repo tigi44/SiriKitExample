@@ -78,6 +78,22 @@ struct ContentView: View {
             
             showIntentView.toggle()
         })
+        .onContinueUserActivity("ShowTextUIIntent", perform: { userActivity in
+            
+            if let intent = userActivity.interaction?.intent as? ShowTextUIIntent,
+               let intentResponse = userActivity.interaction?.intentResponse as? ShowTextUIIntentResponse {
+                
+                if let text = intent.text,
+                   let reversedText = intentResponse.reversedText,
+                   let uppercaseText = intentResponse.uppercaseText {
+                    intentViewText = "\(text), reversed text : \(reversedText), uppercase text : \(uppercaseText)"
+                } else {
+                    intentViewText = nil
+                }
+            }
+            
+            showIntentView.toggle()
+        })
     }
 }
 

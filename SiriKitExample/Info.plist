@@ -24,6 +24,7 @@
 	<array>
 		<string>ReverseTextIntent</string>
 		<string>ShowIntentViewIntent</string>
+		<string>ShowTextUIIntent</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

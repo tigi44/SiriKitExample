@@ -37,3 +37,20 @@ extension IntentHandler: ReverseTextIntentHandling {
         }
     }
 }
+
+extension IntentHandler: ShowTextUIIntentHandling {
+    func resolveText(for intent: ShowTextUIIntent, with completion: @escaping (INStringResolutionResult) -> Void) {
+        completion(INStringResolutionResult.success(with: intent.text ?? ""))
+    }
+    
+    func handle(intent: ShowTextUIIntent, completion: @escaping (ShowTextUIIntentResponse) -> Void) {
+        if let inputText = intent.text, !inputText.isEmpty {
+            
+            let reversedText = String(inputText.reversed())
+            let uppercaseText = inputText.uppercased()
+            completion(ShowTextUIIntentResponse.success(reversedText: reversedText, uppercaseText: uppercaseText))
+        } else {
+            completion(ShowTextUIIntentResponse.failure(error: "The entered text was invalid"))
+        }
+    }
+}
