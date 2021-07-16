@@ -65,9 +65,15 @@ struct ContentView: View {
         })
         .onContinueUserActivity("ReverseTextIntent", perform: { userActivity in
             
-            if let intent = userActivity.interaction?.intent
-                as? ReverseTextIntent {
-                intentViewText = intent.text
+            if let intent = userActivity.interaction?.intent as? ReverseTextIntent,
+               let intentResponse = userActivity.interaction?.intentResponse as? ReverseTextIntentResponse {
+                
+                if let text = intent.text,
+                   let reversedText = intentResponse.reversedText {
+                    intentViewText = "\(text), reversed text : \(reversedText)"
+                } else {
+                    intentViewText = nil
+                }
             }
             
             showIntentView.toggle()
